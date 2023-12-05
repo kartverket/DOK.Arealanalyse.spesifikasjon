@@ -62,12 +62,12 @@ Dette er utkast/forslag til standard for DOK-arealanalyse.
 Se [Spesifikasjon](spec.md)
 
 ### Demonstrator
-En demonstrator/POC for å teste ut API for DOK arealanalyser er tilgjengelig på (https://dok-arealanalyse.azurewebsites.net/).
+En demonstrator/POC for å teste ut API for DOK arealanalyser er tilgjengelig på https://dok-arealanalyse.azurewebsites.net/.
 
 Her er eksempler på områder som kan brukes som analyseområde i demonstrator:
-* [Stormflo skien havn](demonstrator\stormflo_havn.geojson)
-* [Arealplan His allè i Arendal](demonstrator\arealplan_his-alle.geojson)
-* [Flom i drammen](demonstrator\flom_drammen.geojson)
+* [Stormflo skien havn](demonstrator/stormflo_havn.geojson)
+* [Arealplan His allè i Arendal](demonstrator/arealplan_his-alle.geojson)
+* [Flom i drammen](demonstrator/flom_drammen.geojson)
 
 
 ### Liste over avklaringer legges under Issues
