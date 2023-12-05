@@ -1,0 +1,97 @@
+{
+  "resultList": [
+    {
+      "runAlgorithm": "1.set inputgeometry, 2.addbuffer 50, 3.Intersect rpOmråde, 4.deliver result",
+      "runOnDataset": {
+        "datasetid": "fbb95c67-623f-430a-9fa5-9cfcea8366b3",
+        "title": "Reguleringsplaner",
+        "updated": "03.10.2023",
+        "description": "Reguleringsplan er et arealplankart med tilhørende bestemmelser som fastlegger bruk, flerbruk og vern i bestemte områder, og som gir grunnlag for avklaring av hvilke bygge- og anleggstiltak som kan gjennomføres i planområdet. Kommunestyret skal sørge for at det blir utarbeidet reguleringsplan for de områder i kommunen hvor dette følger av loven eller av kommuneplanens arealdel, samt der det ellers er behov for å sikre forsvarlig planavklaring og gjennomføring av bygge- og anleggstiltak, flerbruk og vern i forhold til berørte private og offentlige interesser. For gjennomføring av større bygge- og anleggstiltak og andre tiltak som kan få vesentlige virkninger for miljø og samfunn, kreves det reguleringsplan. Reguleringsplan kan utarbeides som en områderegulering for et større område eller som en detaljregulering for enkelttiltak eller mindre områder. Staten kan, når viktige statlige eller regionale interesser tilsier det, vedta statlig reguleringsplan. Private har rett til å fremme forslag til detaljregulering.",
+        "datasetDescriptionUri": "https://kartkatalog.geonorge.no/metadata/reguleringsplaner/00036352-a2aa-4b90-89d1-862bc80439d3"
+      },
+      "resultStatus": "NO-HIT",
+      "buffer": 50,
+      "theme": "Plan"
+    },
+    {
+      "runAlgorithm": "1.set inputgeometry, 2.addbuffer 50, 3.Intersect kpOmråde, 4.deliver result",
+      "runOnDataset": {
+        "datasetid": "fbb95c67-623f-430a-9fa5-9cfcea8366b3",
+        "title": "Kommuneplaner",
+        "updated": "03.10.2023",
+        "description": "Kommuneplanen skal være kommunens overordnede styringsdokument. Den skal gi rammer for virksomhetenes planer og tiltak, og planer for bruk og vern av arealer i kommunen. Alle kommuner skal ha en kommuneplan. En samlet kommuneplan består både av en samfunnsdel med handlingsdel og en arealdel. Kommunen bestemmer gjennom vedtak av kommunal planstrategi om kommunen skal gjennomføre en full kommuneplanrevisjon av alle delene, eller om bare deler av kommuneplanen skal revideres, og hva revisjonen skal gå ut på. Kommuneplanen skal ivareta både kommunale, regionale og nasjonale mål, interesser og oppgaver, og bør omfatte alle viktige mål og oppgaver i kommunen. Den skal ta utgangspunkt i den kommunale planstrategien og legge retningslinjer og pålegg fra statlige og regionale myndigheter til grunn. Det kan utarbeides kommunedelplan for bestemte områder, temaer eller virksomhetsområder. Kommuneplanen skal ha en handlingsdel som angir hvordan planen skal følges opp de fire påfølgende år eller mer, og revideres årlig (Regjeringen.no).",
+        "datasetDescriptionUri": "https://kartkatalog.geonorge.no/metadata/kommuneplaner/1cab28e5-6eec-4c9d-b3b7-4400a69a674e"
+      },
+      "resultStatus": "NO-HIT",
+      "buffer": 50,
+      "theme": "Plan"
+    },
+    {
+      "runAlgorithm": "1.set inputgeometry, 2.addbuffer 50, 3.Intersect rpOmråde, 4.deliver result",
+      "runOnDataset": {
+        "datasetid": "fbb95c67-623f-430a-9fa5-9cfcea8366b3",
+        "title": "Reguleringsplaner",
+        "updated": "03.10.2023",
+        "description": "Reguleringsplan er et arealplankart med tilhørende bestemmelser som fastlegger bruk, flerbruk og vern i bestemte områder, og som gir grunnlag for avklaring av hvilke bygge- og anleggstiltak som kan gjennomføres i planområdet. Kommunestyret skal sørge for at det blir utarbeidet reguleringsplan for de områder i kommunen hvor dette følger av loven eller av kommuneplanens arealdel, samt der det ellers er behov for å sikre forsvarlig planavklaring og gjennomføring av bygge- og anleggstiltak, flerbruk og vern i forhold til berørte private og offentlige interesser. For gjennomføring av større bygge- og anleggstiltak og andre tiltak som kan få vesentlige virkninger for miljø og samfunn, kreves det reguleringsplan. Reguleringsplan kan utarbeides som en områderegulering for et større område eller som en detaljregulering for enkelttiltak eller mindre områder. Staten kan, når viktige statlige eller regionale interesser tilsier det, vedta statlig reguleringsplan. Private har rett til å fremme forslag til detaljregulering.",
+        "datasetDescriptionUri": "https://kartkatalog.geonorge.no/metadata/reguleringsplaner/00036352-a2aa-4b90-89d1-862bc80439d3"
+      },
+      "resultStatus": "HIT",
+      "buffer": 50,
+      "rasterresult": "reguleringsplan_område.png",
+      "cartography": "plan_tegnforklaring.png",
+      "theme": "Plan"
+    },
+    {
+      "runAlgorithm": "1.set inputgeometry, 2.addbuffer 50, 3.Intersect rpOmråde, 4.deliver result",
+      "runOnDataset": {
+        "datasetid": "fbb95c67-623f-430a-9fa5-9cfcea8366b3",
+        "title": "Reguleringsplaner",
+        "updated": "03.10.2023",
+        "description": "Reguleringsplan er et arealplankart med tilhørende bestemmelser som fastlegger bruk, flerbruk og vern i bestemte områder, og som gir grunnlag for avklaring av hvilke bygge- og anleggstiltak som kan gjennomføres i planområdet. Kommunestyret skal sørge for at det blir utarbeidet reguleringsplan for de områder i kommunen hvor dette følger av loven eller av kommuneplanens arealdel, samt der det ellers er behov for å sikre forsvarlig planavklaring og gjennomføring av bygge- og anleggstiltak, flerbruk og vern i forhold til berørte private og offentlige interesser. For gjennomføring av større bygge- og anleggstiltak og andre tiltak som kan få vesentlige virkninger for miljø og samfunn, kreves det reguleringsplan. Reguleringsplan kan utarbeides som en områderegulering for et større område eller som en detaljregulering for enkelttiltak eller mindre områder. Staten kan, når viktige statlige eller regionale interesser tilsier det, vedta statlig reguleringsplan. Private har rett til å fremme forslag til detaljregulering.",
+        "datasetDescriptionUri": "https://kartkatalog.geonorge.no/metadata/reguleringsplaner/00036352-a2aa-4b90-89d1-862bc80439d3"
+      },
+      "resultStatus": "HIT",
+      "buffer": 50,
+      "rasterresult": "reguleringsplan.png",
+      "cartography": "arealformål_tegnforklaring.png",
+      "theme": "Plan"
+    },
+    {
+      "runAlgorithm": "1.set inputgeometry, 2.addbuffer 50, 3.Intersect kpOmråde, 4.deliver result",
+      "runOnDataset": {
+        "datasetid": "fbb95c67-623f-430a-9fa5-9cfcea8366b3",
+        "title": "Kommuneplaner",
+        "updated": "03.10.2023",
+        "description": "Kommuneplanen skal være kommunens overordnede styringsdokument. Den skal gi rammer for virksomhetenes planer og tiltak, og planer for bruk og vern av arealer i kommunen. Alle kommuner skal ha en kommuneplan. En samlet kommuneplan består både av en samfunnsdel med handlingsdel og en arealdel. Kommunen bestemmer gjennom vedtak av kommunal planstrategi om kommunen skal gjennomføre en full kommuneplanrevisjon av alle delene, eller om bare deler av kommuneplanen skal revideres, og hva revisjonen skal gå ut på. Kommuneplanen skal ivareta både kommunale, regionale og nasjonale mål, interesser og oppgaver, og bør omfatte alle viktige mål og oppgaver i kommunen. Den skal ta utgangspunkt i den kommunale planstrategien og legge retningslinjer og pålegg fra statlige og regionale myndigheter til grunn. Det kan utarbeides kommunedelplan for bestemte områder, temaer eller virksomhetsområder. Kommuneplanen skal ha en handlingsdel som angir hvordan planen skal følges opp de fire påfølgende år eller mer, og revideres årlig (Regjeringen.no).",
+        "datasetDescriptionUri": "https://kartkatalog.geonorge.no/metadata/kommuneplaner/1cab28e5-6eec-4c9d-b3b7-4400a69a674e"
+      },
+      "resultStatus": "HIT",
+      "buffer": 50,
+      "rasterresult": "kommuneplanensaarealdel.png",
+      "cartography": "arealformål_tegnforklaring.png",
+      "theme": "Plan"
+    },
+    {
+      "runAlgorithm": "1.set inputgeometry, 2.addbuffer 50, 3.Intersect rpOmråde, 4.deliver result",
+      "runOnDataset": {
+        "datasetid": "fbb95c67-623f-430a-9fa5-9cfcea8366b3",
+        "title": "Reguleringsplaner",
+        "updated": "03.10.2023",
+        "description": "Reguleringsplan er et arealplankart med tilhørende bestemmelser som fastlegger bruk, flerbruk og vern i bestemte områder, og som gir grunnlag for avklaring av hvilke bygge- og anleggstiltak som kan gjennomføres i planområdet. Kommunestyret skal sørge for at det blir utarbeidet reguleringsplan for de områder i kommunen hvor dette følger av loven eller av kommuneplanens arealdel, samt der det ellers er behov for å sikre forsvarlig planavklaring og gjennomføring av bygge- og anleggstiltak, flerbruk og vern i forhold til berørte private og offentlige interesser. For gjennomføring av større bygge- og anleggstiltak og andre tiltak som kan få vesentlige virkninger for miljø og samfunn, kreves det reguleringsplan. Reguleringsplan kan utarbeides som en områderegulering for et større område eller som en detaljregulering for enkelttiltak eller mindre områder. Staten kan, når viktige statlige eller regionale interesser tilsier det, vedta statlig reguleringsplan. Private har rett til å fremme forslag til detaljregulering.",
+        "datasetDescriptionUri": "https://kartkatalog.geonorge.no/metadata/reguleringsplaner/00036352-a2aa-4b90-89d1-862bc80439d3"
+      },
+      "resultStatus": "HIT",
+      "buffer": 50,
+      "rasterresult": "reguleringsplan.png",
+      "cartography": "arealformål_tegnforklaring.png",
+      "theme": "Plan",
+      "data": [
+        {"planensHensikt": "Hovedformålet med planen er å legge til rette for utbygging av inntil 19 boenheter med tilhørende tilkomst og parkering. I tillegg skal det etableres en gangforbindelse mellom Nattlandsfjellet og Nattlandsveien gjennom det nye boligområdet. Planen skal tilrettelegge for boliger i gåavstand til kollektivknutepunktet på Birkelundstoppen og til bybanestoppet på Slettbakken. Arealet rundt krysset mellom Nattlandveien/Nattlandsfjellet er tatt med i denne planen for å sikre areal til utbedring av krysset."},
+        {"feltnavn":"BBB1", "formål": "1110 - Boligbebyggelse", "utnyttingstype": "%BYA", "utnyttingstall": 30},
+        {"hensynssone":"H101", "støy": "210 - Rød sone"}
+      ]
+    }
+
+  ],
+  "report": "ABCDEFGHIJKL"
+}
