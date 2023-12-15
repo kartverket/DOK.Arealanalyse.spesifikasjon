@@ -1,5 +1,9 @@
-# Arealanalyser
+# Bakgrunn
+Kommunal- og distriktsdepartementet bestilte i 2023 at Kartverket skulle utvikle nasjonalt standardisert opplegg for DOK-arealanalyse. Slike analyser varierer i dag i innhold og gir ulike svar fra ulike systemleverandører og etater. I arealplanlegging og byggesak er det ønske om forutsigbare prosesser og at aktørene har samme kunnskapsgrunnlag og dokumentasjon. Med standardisert opplegg for arealanalyse vil analyseresultater fra ulike tilbydere kunne sammenlignes, analyser vil dokumenteres og vil kunne være etterprøvbare. Det standardiserte opplegg fokuserer på både teknisk og faglig samordning av innholdet i analysene. 
 Prosjektet startet opp under [tiltak 50 - Arealanalyser](https://www.geonorge.no/Geodataarbeid/nasjonal-geodatastrategi/handlingsplanens-tiltak/tiltak-50/) i nasjonal geodatastrategi sin handlingsplan og er nå videreført under [tiltak 3 - Heve kvaliteten på det offentlige kartgrunnlaget(DOK)](https://www.geonorge.no/Geodataarbeid/nasjonal-geodatastrategi/handlingsplanens-tiltak/tiltak-3/) og [aktivitet 2 - DOK arealanalyse](https://tiltaksplan.geonorge.no/tiltak/3/aktivitet/2).
+
+# Arealanalyser
+Kartverket har utviklet opplegget ved bruk av Arkitektum as som konsulent, og har i arbeidet hatt med seg kommuner og andre brukere, samt fått innspill fra systemleverandører. Arbeidet med det standardiserte opplegget fortsetter i 2024, med mål å publisere et endelig forslag til standardisert opplegg i løpet av 2024. Det er ønske om tett dialog med aktører i det videre arbeidet. For å legge til rette for slik kontakt og dialog legges det nå ut dokumentasjon på github. Kartverket knyttes videre arbeid  også til prosjektet Geolett som vil pågå i perioden 2023-2025. 
 
 Prosjektmål:
 * Beskrive en standardisert DOK-arealanalyse med mål å få mer enhetlig DOK-analyse på tvers av kommuner og systemleverandører
