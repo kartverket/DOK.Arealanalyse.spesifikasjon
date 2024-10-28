@@ -10,29 +10,3 @@ spec:
   lifecycle: "production"
   owner: "datadeling_og_distribusjon"
   system: "geonorge"
----
-apiVersion: "backstage.io/v1alpha1"
-kind: "Group"
-metadata:
-  name: "security_champion_DOK.Arealanalyse.spesifikasjon"
-  title: "Security Champion DOK.Arealanalyse.spesifikasjon"
-spec:
-  type: "security_champion"
-  parent: "land_security_champions"
-  members:
-  - "dagolav"
-  children:
-  - "resource:DOK.Arealanalyse.spesifikasjon"
----
-apiVersion: "backstage.io/v1alpha1"
-kind: "Resource"
-metadata:
-  name: "DOK.Arealanalyse.spesifikasjon"
-  links:
-  - url: "https://github.com/kartverket/DOK.Arealanalyse.spesifikasjon"
-    title: "DOK.Arealanalyse.spesifikasjon på GitHub"
-spec:
-  type: "repo"
-  owner: "security_champion_DOK.Arealanalyse.spesifikasjon"
-  dependencyOf:
-  - "component:DOK.Arealanalyse.spesifikasjon"
