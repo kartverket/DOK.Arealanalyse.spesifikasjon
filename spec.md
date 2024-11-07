@@ -41,6 +41,12 @@ Eksempel fra POC https://dokanalyse-ogc-api.azurewebsites.net/ (mock versjon fas
 | resultList      | [Result](#result)       |  0..* | resultatListe | strukturert resultat på analysen.
 | report        | Binary    | 0..1 | rapport | Rapporten levert som pdf (tilsvarende funksjonalitet som før for å dokumentere resultatet).
 | inputGeometry        | GM_Surface    | 0..1 | område | valgt område for analyse.
+| inputGeometryArea | Integer    | 0..1  | områdeareal   | beregner arealet i kvm på valgte område for analyse.
+| factSheetRasterResult      | Binary    | 0..1  | kartutsnitt   | wms url for å hente rasterbilde for området. 
+| factSheetCartography       | Binary    | 0..1  | tegnforklaring   | wms url for å hente tegneregler for resultatet.
+| factList      | [FactPart](#factpart)       |  0..* | oppsummeringListe | oppsummering av deler til faktaark.
+| municipalityNumber      | String    | 0..1  | kommunenummer   | Kommunenummer som kan brukes til kommunens valgte DOK og i faktaark.
+| municipalityName     | String    | 0..1  | kommunenavn   | 
 
 #### Result
 
