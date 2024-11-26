@@ -31,8 +31,9 @@ Eksempel fra POC https://dokanalyse-ogc-api.azurewebsites.net/ (mock versjon fas
 | requestedBuffer   | Integer        | 0..1 | ønskeBuffer | Antall meter som legges på InputGeometry som buffer i analysen.  Kan utelates og avgjøres av analysen hva som er fornuftig buffer.
 | context | String  | 0..1  | kontekst  | hint om hva analysen skal brukes til. Feks planinitiativ, reguleringsplan, kommuneplan, byggesak, ros analyse, konsekvensutredning slik at relevante/egnede datasett blir brukt og de riktige analyser/generaliseringer blir brukt. Kontekst kan også brukes for å hente ut riktig veiledningstekster fra geolett registeret(i geolett 1 ble det lagt inn byggesak som kontekst for veiledninger).
 | theme | String  | 0..1  | tema  | dok tema kan angis for å begrense analysen til aktuelle tema.
-| includeGuidance | Boolean  | 0..1  | inkluderVeiledning  | velg om veiledningstekster skal inkluderes i resultat om det finnes i geolett. Kan være avhengig av å styres med context for å få riktige tekster.
-| includeQualitymeasurement | Boolean  | 0..1  | inkluderKvalitetsinformasjon  | velg om kvalitetsinformasjon skal taes med i resultatet der det er mulig, slik som dekningskart, egnethet, nøyaktighet, etc.
+| includeGuidance | Boolean  | 0..1  | inkluderVeiledning  | angir om veiledningstekster skal inkluderes i resultat om det finnes i geolett. Kan være avhengig av å styres med context for å få riktige tekster.
+| includeQualitymeasurement | Boolean  | 0..1  | inkluderKvalitetsinformasjon  | angir om kvalitetsinformasjon skal taes med i resultatet der det er mulig, slik som dekningskart, egnethet, nøyaktighet, etc.
+| includeFilterChosenDOK | Boolean  | 0..1  | inkluderFilterValgtDOK  | angir filter med  bare datasett som kommune har valgt inn i Det Offentlige Kartgrunnlag (DOK).
 
 ### AnalysisResponse
 
@@ -45,8 +46,8 @@ Eksempel fra POC https://dokanalyse-ogc-api.azurewebsites.net/ (mock versjon fas
 | factSheetRasterResult      | Binary    | 0..1  | kartutsnitt   | wms url for å hente rasterbilde for området. 
 | factSheetCartography       | Binary    | 0..1  | tegnforklaring   | wms url for å hente tegneregler for resultatet.
 | factList      | [FactPart](#factpart)       |  0..* | oppsummeringListe | oppsummering av deler til faktaark.
-| municipalityNumber      | String    | 0..1  | kommunenummer   | Kommunenummer som kan brukes til kommunens valgte DOK og i faktaark.
-| municipalityName     | String    | 0..1  | kommunenavn   | 
+| municipalityNumber      | String    | 0..1  | kommunenummer   | Kommunenummer som kan brukes til kommunens valgte DOK og i fakta visning.
+| municipalityName     | String    | 0..1  | kommunenavn   |  Kommunenavn som kan brukes til kommunens valgte DOK og i fakta visning.
 
 #### Result
 
@@ -68,7 +69,8 @@ Eksempel fra POC https://dokanalyse-ogc-api.azurewebsites.net/ (mock versjon fas
 | distanceToObject  | Integer   | 0..1  | avstandTilObjekt  | nærmeste avstand fra område til objekt. Mest relevant om det ikke er treff innenfor området som forespørres. Anbefaling 83 i teknologisk rammeverk.
 | theme             | String    | 0..1  | tema   | DOK tema for datasettet.
 | qualityMeasurement | [QualityMeasurement](#qualitymeasurement) | 0..* | kvalitetsmåling | liste over relevante kvaliteter slik som fullstendighet (dekningskart), egnethet (fra DOK), etc
-| data              | Any        | 0..1  | data   | mulighet for å returnere lister med data som gir innsikt i potensielle konsekvenser eller kvalitetsinformasjon.
+| qualityWarning   | String   | 0..*   | kvalitetsadvarsel   | liste over kvalitetsvarsler fra kvalitetsindikatorer som kommer over angitt grense i sin konfigurasjon.
+| data              | Any        | 0..1  | data   | mulighet for å returnere lister med data med mer informasjon om treffene i analysen.
 
 #### Dataset
 
