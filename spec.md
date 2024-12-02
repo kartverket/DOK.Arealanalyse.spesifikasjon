@@ -1,10 +1,6 @@
 # Teknisk dokumentasjon - OGC Processes API for DOK Arealanalyse
 [OGC API Processes](https://ogcapi.ogc.org/processes/) er valgt brukt som rammene til DOK analysen. 
 
-Eksempel fra https://app.swaggerhub.com/apis/OGC/ogcapi-processes-1-example-1/1.0.0#/
-
-Eksempel fra POC https://dokanalyse-ogc-api.azurewebsites.net/ (mock versjon faste data i api) og https://dok-arealanalyse-api.azurewebsites.net/ (kjører live mot stormflo, flomsoner og aktsomhetsområder flom)
-
 * processID = dok-analyse
 * Kjør analyse: POST /processes/{processID}/execution
     * requestBody = [no.geonorge.dokanalyse.analysisinput.v0.1.schema.json](schema/no.geonorge.dokanalyse.analysisinput.v0.1.schema.json)
@@ -19,7 +15,7 @@ Eksempel fra POC https://dokanalyse-ogc-api.azurewebsites.net/ (mock versjon fas
         * respons = [no.geonorge.dokanalyse.analysisresponse.v0.1.schema.json](schema/no.geonorge.dokanalyse.analysisresponse.v0.1.schema.json)
         * [Eksempel resultat](schema/sampledata/result1.json)
 
-## Beskrivelse av datamodell for input og respons
+## Beskrivelse av datamodell for input og output
 
 ![Datamodell for forespørsel og respons!](Arealanalyse.png)
 
@@ -34,8 +30,9 @@ Eksempel fra POC https://dokanalyse-ogc-api.azurewebsites.net/ (mock versjon fas
 | includeGuidance | Boolean  | 0..1  | inkluderVeiledning  | angir om veiledningstekster skal inkluderes i resultat om det finnes i geolett. Kan være avhengig av å styres med context for å få riktige tekster.
 | includeQualitymeasurement | Boolean  | 0..1  | inkluderKvalitetsinformasjon  | angir om kvalitetsinformasjon skal taes med i resultatet der det er mulig, slik som dekningskart, egnethet, nøyaktighet, etc.
 | includeFilterChosenDOK | Boolean  | 0..1  | inkluderFilterValgtDOK  | angir filter med  bare datasett som kommune har valgt inn i Det Offentlige Kartgrunnlag (DOK).
+| includeFacts | Boolean  | 0..1  | inkluderFakta  | angir om fakta informasjon skal inkluderes i resultatet.
 
-### AnalysisResponse
+### AnalysisOutput
 
 | Navn      | Type | Multiplisitet | Alias | Beskrivelse |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
@@ -97,3 +94,13 @@ Eksempel fra POC https://dokanalyse-ogc-api.azurewebsites.net/ (mock versjon fas
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | href      | String   |  1 |  lenke | 
 | title          | String   | 0..1  | tittel        | 
+
+#### Factpart
+| Navn      | Type | Multiplisitet | Alias | Beskrivelse |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| runAlgorithm      | String       |  1..* |  algoritmeKjørt | beskriver hvilken analyse som er kjørt og hvordan denne er satt sammen.
+| buffer            | Integer   | 0..1  | buffer        | Buffer i antall meter som er brukt rundt området.
+| runOnInputGeometry        | GM_Surface    | 0..1 | område | område analysen er kjørt mot.
+| runOnDataset      | [Dataset](#dataset)   | 1 | kjørtPåDatasett   | Beskrivelse av datasett analysen er kjørt mot.
+| data              | Any        | 0..1  | data   | mulighet for å returnere lister med data som gir innsikt i fakta om analyseområdet.
+| dataTemplate              | String        | 0..1  | datamal   | mulighet for å levere en mal for presentasjon av data.
