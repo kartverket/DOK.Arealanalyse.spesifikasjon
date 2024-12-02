@@ -1,5 +1,5 @@
 # Teknisk dokumentasjon - OGC Processes API for DOK Arealanalyse
-[OGC API Processes](https://ogcapi.ogc.org/processes/) er valgt brukt som rammene til DOK analysen. 
+Krav 1: Tjenesten skal leverer i henhold til [OGC API Processes](https://ogcapi.ogc.org/processes/). 
 
 ## Landingsside
 GET /
@@ -69,20 +69,116 @@ Respons:
 "description": "OGC API er en ny generasjon standarder fra Open Geospatial Consortium. På denne serveren tilbys testimplementasjoner av Arealanalyse"
 }
 ```
+## Liste med prosesser
+GET /processes
 
-* processID = dok-analyse
-* Kjør analyse: POST /processes/{processID}/execution
-    * requestBody = [no.geonorge.dokanalyse.analysisinput.v0.1.schema.json](schema/no.geonorge.dokanalyse.analysisinput.v0.1.schema.json)
-    * [Eksempel forespørsel](schema/sampledata/request.json)
-    * Hvis modus er synkron kommer resultatet som respons
-        * respons = [no.geonorge.dokanalyse.analysisresponse.v0.1.schema.json](schema/no.geonorge.dokanalyse.analysisresponse.v0.1.schema.json)
-        * [Eksempel resultat](schema/sampledata/result1.json)
-    * Hvis asynkron modus vil respons bli jobid
-* Hvis asynkron med jobid så må en sjekke status og vente på at jobben er ferdig
-    * Status: GET /jobs/{jobId}
-    * Resultat: GET /jobs/{jobId}/results
-        * respons = [no.geonorge.dokanalyse.analysisresponse.v0.1.schema.json](schema/no.geonorge.dokanalyse.analysisresponse.v0.1.schema.json)
-        * [Eksempel resultat](schema/sampledata/result1.json)
+Respons:
+```json
+{
+"processes": [
+{
+"version": "0.1.0",
+"id": "dokanalyse",
+"title": "DOK-analyse",
+"description": "Tjeneste som utfører en en standardisert DOK-arealanalyse for enhetlig DOK-analyse på tvers av kommuner og systemleverandørerviser.",
+"keywords": [
+"dokanalyse",
+"DOK"
+],
+"links": [
+{
+"type": "application/json",
+"rel": "self",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/processes/dokanalyse?f=json",
+"title": "Process description as JSON",
+"hreflang": "en-US"
+},
+{
+"type": "text/html",
+"rel": "alternate",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/processes/dokanalyse?f=html",
+"title": "Process description as HTML",
+"hreflang": "en-US"
+},
+{
+"type": "text/html",
+"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/jobs?f=html",
+"title": "jobs for this process as HTML",
+"hreflang": "en-US"
+},
+{
+"type": "application/json",
+"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/jobs?f=json",
+"title": "jobs for this process as JSON",
+"hreflang": "en-US"
+},
+{
+"type": "application/json",
+"rel": "http://www.opengis.net/def/rel/ogc/1.0/execute",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/processes/dokanalyse/execution?f=json",
+"title": "Execution for this process as JSON",
+"hreflang": "en-US"
+}
+],
+"jobControlOptions": [
+"sync-execute"
+],
+"outputTransmission": [
+"value"
+]
+}
+],
+"links": [
+{
+"type": "application/json",
+"rel": "self",
+"title": "This document as JSON",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/processes?f=json"
+},
+{
+"type": "application/ld+json",
+"rel": "alternate",
+"title": "This document as RDF (JSON-LD)",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/processes?f=jsonld"
+},
+{
+"type": "text/html",
+"rel": "alternate",
+"title": "This document as HTML",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/processes?f=html"
+}
+]
+}
+```
+## Starte prosess dok-analyse
+processID = dok-analyse
+POST /processes/{processID}/execution
+
+Forespørsel:
+inputs = [no.geonorge.dokanalyse.analysisinput.v0.1.schema.json](schema/no.geonorge.dokanalyse.analysisinput.v0.1.schema.json)
+[Eksempel forespørsel](schema/sampledata/request.json)
+
+Respons:
+Hvis modus er synkron(sync-execute) kommer resultatet som respons
+output = [no.geonorge.dokanalyse.analysisresponse.v0.1.schema.json](schema/no.geonorge.dokanalyse.analysisresponse.v0.1.schema.json)
+[Eksempel resultat](schema/sampledata/result1.json)
+
+    
+## Hente status på jobb     
+GET /jobs/{jobId}
+
+Hvis asynkron modus vil respons bli jobid
+Hvis asynkron med jobid så må en sjekke status og vente på at jobben er ferdig
+
+    
+## Hente resultatet på en jobb    
+GET /jobs/{jobId}/results
+
+Respons:
+output = [no.geonorge.dokanalyse.analysisresponse.v0.1.schema.json](schema/no.geonorge.dokanalyse.analysisresponse.v0.1.schema.json)
+[Eksempel resultat](schema/sampledata/result1.json)
 
 ## Beskrivelse av datamodell for input og output
 
