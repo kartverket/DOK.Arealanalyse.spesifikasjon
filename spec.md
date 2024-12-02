@@ -1,6 +1,75 @@
 # Teknisk dokumentasjon - OGC Processes API for DOK Arealanalyse
 [OGC API Processes](https://ogcapi.ogc.org/processes/) er valgt brukt som rammene til DOK analysen. 
 
+## Landingsside
+GET /
+
+Respons:
+```json
+{
+"links": [
+{
+"rel": "self",
+"type": "application/json",
+"title": "This document as JSON",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443?f=json"
+},
+{
+"rel": "alternate",
+"type": "application/ld+json",
+"title": "This document as RDF (JSON-LD)",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443?f=jsonld"
+},
+{
+"rel": "alternate",
+"type": "text/html",
+"title": "This document as HTML",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443?f=html",
+"hreflang": "en-US"
+},
+{
+"rel": "service-desc",
+"type": "application/vnd.oai.openapi+json;version=3.0",
+"title": "The OpenAPI definition as JSON",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/openapi"
+},
+{
+"rel": "service-doc",
+"type": "text/html",
+"title": "The OpenAPI definition as HTML",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/openapi?f=html",
+"hreflang": "en-US"
+},
+{
+"rel": "conformance",
+"type": "application/json",
+"title": "Conformance",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/conformance"
+},
+{
+"rel": "data",
+"type": "application/json",
+"title": "Collections",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/collections"
+},
+{
+"rel": "http://www.opengis.net/def/rel/ogc/1.0/processes",
+"type": "application/json",
+"title": "Processes",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/processes"
+},
+{
+"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list",
+"type": "application/json",
+"title": "Jobs",
+"href": "https://dok-arealanalyse-api.azurewebsites.net:443/jobs"
+}
+],
+"title": "OGC API-tjenester - DOK-analyse",
+"description": "OGC API er en ny generasjon standarder fra Open Geospatial Consortium. På denne serveren tilbys testimplementasjoner av Arealanalyse"
+}
+```
+
 * processID = dok-analyse
 * Kjør analyse: POST /processes/{processID}/execution
     * requestBody = [no.geonorge.dokanalyse.analysisinput.v0.1.schema.json](schema/no.geonorge.dokanalyse.analysisinput.v0.1.schema.json)
