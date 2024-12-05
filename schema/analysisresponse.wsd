@@ -1,0 +1,24 @@
+
+@startuml AnalysisResponse
+
+class AnalysisResponse {
+    +resultList: Result
+    +report: Binary
+    +inputGeometry: GM_Surface
+   
+}
+
+class Result {
+    +runAlgorithm: String
+}
+
+class Dataset {
+    +datasetId: String
+    +title: String
+    +description: String
+    +owner: String
+    +updated: Date
+    +datasetDescriptionUri: String
+}
+
+@enduml

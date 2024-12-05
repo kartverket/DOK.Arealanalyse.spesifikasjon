@@ -1,0 +1,14 @@
+
+@startuml AnalysisInput
+
+class AnalysisInput {
+    +inputGeometry: GM_Surface
+    +requestedBuffer: integer 
+    +context: string
+    +theme: string
+    +includeGuidance: boolean
+    +includeQualitymeasurement : boolean
+    +includeFilterChosenDOK : boolean
+}
+
+@enduml

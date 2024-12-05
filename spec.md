@@ -221,13 +221,13 @@ output = [no.geonorge.dokanalyse.analysisresponse.v0.1.schema.json](schema/no.ge
 | runOnDataset      | [Dataset](#dataset)   | 1 | kjørtPåDatasett   | Beskrivelse av datasett analysen er kjørt mot.
 | inputGeometryArea | Integer    | 0..1  | områdeareal   | beregner arealet i kvm på valgte område for analyse.
 | hitArea | Integer    | 0..1  | treffareal   | beregner arealet i kvm på datasett som treffer innenfor analyseområdet.
-| resultStatus      | DatasetResult | 1 | statusResultat    | resultat av analysen om det er treff eller ikke treff. (HIT, NO-HIT, HIT-RED, HIT-YELLOW, NO-HIT-YELLOW, NO-HIT-GREEN)
+| resultStatus      | DatasetResult | 1 | statusResultat    | resultat av analysen om det er treff eller ikke treff. (HIT, NO-HIT, HIT-RED, HIT-YELLOW, NO-HIT-YELLOW, NO-HIT-GREEN). Fargene kan brukes for å koble opp mot Grad av konflikt som angis i Geolett veiledningstekst register
 | possibleActions   | String    | 0..*  | muligeTiltak  | liste over mulige tiltak. Kan være hentet fra Geolett register.
-| rasterResult      | Binary    | 0..1  | kartutsnitt   | rasterbilde av data/resultat. Vurdere WMS referanse isteden for base64 string?
-| cartography       | Binary    | 0..1  | tegnforklaring   | viser tegneregler for resultatet. Vurdere WMS referanse isteden for base64 string?
+| rasterResult      | Binary    | 0..1  | kartutsnitt   | rasterbilde av data/resultat eller referanse til WMS.
+| cartography       | Binary    | 0..1  | tegnforklaring   | viser tegneregler for resultatet.
 | guidanceText      | String    | 0..1  | veiledningsTekst   | Kan være hentet fra Geolett register.
-| guidanceUri       | [Uri](#Uri)    | 0..*  | veiledningslenke   | Veiledningsreferanser. Kan være hentet fra Geolett register.
-| description       | String    | 0..1  | forklarendeTekst   | beskrivelse av resultat. Kan være hentet fra Geolett register.
+| guidanceUri       | [Uri](#Uri)    | 0..*  | veiledningslenke   | Veiledningsreferanser. Kan være hentet fra Geolett veiledningstekst register.
+| description       | String    | 0..1  | forklarendeTekst   | beskrivelse av resultat. Kan være hentet fra Geolett veiledningstekst register.
 | distanceToObject  | Integer   | 0..1  | avstandTilObjekt  | nærmeste avstand fra område til objekt. Mest relevant om det ikke er treff innenfor området som forespørres. Anbefaling 83 i teknologisk rammeverk.
 | theme             | String    | 0..1  | tema   | DOK tema for datasettet.
 | qualityMeasurement | [QualityMeasurement](#qualitymeasurement) | 0..* | kvalitetsmåling | liste over relevante kvaliteter slik som fullstendighet (dekningskart), egnethet (fra DOK), etc
@@ -249,10 +249,11 @@ output = [no.geonorge.dokanalyse.analysisresponse.v0.1.schema.json](schema/no.ge
 
 | Navn      | Type | Multiplisitet | Alias | Beskrivelse |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
-| qualityDimensionId      | String   |  1 |  kvalitetsdimensjonId | kvalitetsdimensjoner slik som fullstendighet_dekningskart, egnethet_reguleringsplan, etc.
+| qualityDimensionId      | String   |  1 |  kvalitetsdimensjonId | kvalitetsdimensjoner slik som Fullstendighet, Egenskapskvalitet, Logisk konsistens, Kvalitet på tidfesting, Stedfestingsnøyaktighet, Egnethet, etc.
 | qualityDimensionName     | String   |  1 |  kvalitetsdimensjonNavn | kvalitetsdimensjoner i klart språk.
-| value          | String   | 1  | verdi        | verdi for kvalitetsdimensjon.
-| comment          | String   | 0..1  | kommentar        | kommentar til kvalitetsdimensjon.
+| qualityMetric     | String   |  1 |  kvalitetsmål | brukes til å representere et kvalitetsmål som fullstendighet_dekningskart, egnethet_reguleringsplan, etc.
+| value          | String   | 1  | verdi        | verdi for kvalitetsmåling som feks Ikke kartlagt, Kartlagt med funn for fullstendighet_dekningskart.
+| comment          | String   | 0..1  | kommentar        | kommentar til kvalitetsmåling.
 
 #### Uri
 | Navn      | Type | Multiplisitet | Alias | Beskrivelse |
