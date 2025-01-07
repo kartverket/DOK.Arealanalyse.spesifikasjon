@@ -7,48 +7,48 @@
     "resultList": {
       "type": "array",
       "items": {
-        "description": "Result",
         "type": "object",
         "properties": {
           "runAlgorithm": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "buffer": {
             "type": "integer"
           },
+          "runOnInputGeometry": {
+            "oneOf": [
+                        {
+                          "$ref": "http://geojson.org/schema/Polygon.json"
+                        },
+                        {
+                          "$ref": "http://geojson.org/schema/MultiPolygon.json"
+                        }
+                      ]
+          },
           "runOnDataset": {
-            "description": "Result.Dataset",
-            "type": "object",
-            "properties": {
-              "datasetid": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "updated": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "datasetDescriptionUri": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "datasetid",
-              "title",
-              "updated"
-            ]
+            "$ref": "no.geonorge.dokanalyse.v1.dataset.schema.json"
+          },
+          "inputGeometryArea": {
+            "type": "integer"
+          },
+          "hitArea": {
+            "type": "integer"
           },
           "resultStatus": {
-            "description": "Result.DatasetResult",
             "type": "string",
             "enum": [
-              "Hit",
-              "No hit"
+              "HIT",
+              "NO-HIT",
+              "HIT-RED",
+              "HIT-YELLOW",
+              "NO-HIT-YELLOW",
+              "NO-HIT-GREEN",
+              "NOT-RELEVANT",
+              "TIMEOUT",
+              "ERROR"
             ]
           },
           "possibleActions": {
@@ -58,13 +58,11 @@
             }
           },
           "rasterresult": {
-            "description": "Binary",
             "type": "string",
             "contentEncoding": "base64",
             "contentMediaType": "image/png"
           },
           "cartography": {
-            "description": "Binary",
             "type": "string",
             "contentEncoding": "base64",
             "contentMediaType": "image/png"
@@ -75,14 +73,31 @@
           "guidanceUri": {
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "no.geonorge.dokanalyse.v1.uri.schema.json"
             }
           },
           "description": {
             "type": "string"
           },
+          "distanceToObject": {
+            "type": "integer"
+          },
+          "theme": {
+            "type": "string"
+          },
+          "qualitymeasurement": {
+            "type": "array",
+            "items": {
+              "$ref": "no.geonorge.dokanalyse.v1.qualitymeasurement.schema.json"
+            }
+          },
+          "qualityWarning": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "data": {
-            "description": "Any",
             "type": "object"
           }
         },
@@ -94,10 +109,40 @@
       }
     },
     "report": {
-      "description": "Binary",
       "type": "string",
       "contentEncoding": "base64",
       "contentMediaType": "application/pdf"
+    },
+    "inputGeometry": {
+      "oneOf": [
+        {
+          "$ref": "http://geojson.org/schema/Polygon.json"
+        },
+        {
+          "$ref": "http://geojson.org/schema/MultiPolygon.json"
+        }
+      ]
+    },
+    "inputGeometryArea": {
+      "type": "integer"
+    },
+    "factInfoRasterResult": {
+      "type": "string"
+    },
+    "factInfoCartography": {
+      "type": "string"
+    },
+    "factList": {
+      "type": "array",
+      "items": {
+          "$ref": "no.geonorge.dokanalyse.v1.factpart.schema.json"
+        }
+    },
+    "municipalityNumber": {
+      "type": "string"
+    },
+    "municipalityName": {
+      "type": "string"
     }
   }
 }

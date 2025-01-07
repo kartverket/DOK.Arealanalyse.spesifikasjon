@@ -1,0 +1,37 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "no.geonorge.dokanalyse.v1.factpart.schema.json",
+  "title": "Factpart",
+  "type": "object",
+  "properties": {
+    "runAlgorithm": {
+      "type": "string"
+    },
+    "buffer": {
+      "type": "integer"
+    },
+    "runOnInputGeometry": {
+      "oneOf": [
+        {
+          "$ref": "http://geojson.org/schema/Polygon.json"
+        },
+        {
+          "$ref": "http://geojson.org/schema/MultiPolygon.json"
+        }
+      ]
+    },
+    "runOnDataset": {
+      "$ref": "no.geonorge.dokanalyse.v1.dataset.schema.json"
+    },
+    "data": {
+      "type": "object"
+    },
+    "dataTemplate": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "runAlgorithm",
+    "runOnDataset"
+  ]
+}

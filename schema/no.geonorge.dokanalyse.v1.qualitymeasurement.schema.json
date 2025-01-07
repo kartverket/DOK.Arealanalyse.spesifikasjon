@@ -1,0 +1,25 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "no.geonorge.dokanalyse.v1.qualitymeasurement.schema.json",
+  "title": "QualityMeasurement",
+  "type": "object",
+  "properties": {
+    "qualityDimensionId": {
+      "type": "string"
+    },
+    "qualityDimensionName": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "qualityDimensionId",
+    "qualityDimensionName",
+    "value"
+  ]
+}

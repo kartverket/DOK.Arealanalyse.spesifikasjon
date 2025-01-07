@@ -1,0 +1,33 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "no.geonorge.dokanalyse.v1.dataset.schema.json",
+  "title": "Dataset",
+  "type": "object",
+  "properties": {
+    "datasetid": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "datasetDescriptionUri": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "datasetid",
+    "title",
+    "owner",
+    "updated"
+  ]
+}
