@@ -5,21 +5,34 @@
   "type": "object",
   "properties": {
     "inputGeometry": {
-      "$ref": "http://geojson.org/schema/Polygon.json"
+      "oneOf": [
+        {
+          "$ref": "http://geojson.org/schema/Polygon.json"
+        },
+        {
+          "$ref": "http://geojson.org/schema/MultiPolygon.json"
+        }
+      ]
     },
     "requestedBuffer": {
       "type": "integer"
     },
-    "context": {
-      "type": "string"
-    },
     "theme": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "context": {
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "includeGuidance": {
       "type": "boolean"
     },
-    "includeQualitymeasurement": {
+    "includeQualityMeasurement": {
       "type": "boolean"
     },
     "includeFilterChosenDOK": {
