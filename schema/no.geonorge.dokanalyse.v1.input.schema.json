@@ -1,0 +1,35 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "no.geonorge.dokanalyse.v1.input.schema.json",
+  "title": "AnalysisInput",
+  "type": "object",
+  "properties": {
+    "inputGeometry": {
+      "$ref": "http://geojson.org/schema/Polygon.json"
+    },
+    "requestedBuffer": {
+      "type": "integer"
+    },
+    "context": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "string"
+    },
+    "includeGuidance": {
+      "type": "boolean"
+    },
+    "includeQualitymeasurement": {
+      "type": "boolean"
+    },
+    "includeFilterChosenDOK": {
+      "type": "boolean"
+    },
+    "includeFacts": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "inputGeometry"
+  ]
+}

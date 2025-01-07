@@ -1,0 +1,103 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "no.geonorge.dokanalyse.v1.output.schema.json",
+  "title": "AnalysisOutput",
+  "type": "object",
+  "properties": {
+    "resultList": {
+      "type": "array",
+      "items": {
+        "description": "Result",
+        "type": "object",
+        "properties": {
+          "runAlgorithm": {
+            "type": "string"
+          },
+          "buffer": {
+            "type": "integer"
+          },
+          "runOnDataset": {
+            "description": "Result.Dataset",
+            "type": "object",
+            "properties": {
+              "datasetid": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "updated": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "datasetDescriptionUri": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "datasetid",
+              "title",
+              "updated"
+            ]
+          },
+          "resultStatus": {
+            "description": "Result.DatasetResult",
+            "type": "string",
+            "enum": [
+              "Hit",
+              "No hit"
+            ]
+          },
+          "possibleActions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rasterresult": {
+            "description": "Binary",
+            "type": "string",
+            "contentEncoding": "base64",
+            "contentMediaType": "image/png"
+          },
+          "cartography": {
+            "description": "Binary",
+            "type": "string",
+            "contentEncoding": "base64",
+            "contentMediaType": "image/png"
+          },
+          "guidanceText": {
+            "type": "string"
+          },
+          "guidanceUri": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "data": {
+            "description": "Any",
+            "type": "object"
+          }
+        },
+        "required": [
+          "runAlgorithm",
+          "runOnDataset",
+          "resultStatus"
+        ]
+      }
+    },
+    "report": {
+      "description": "Binary",
+      "type": "string",
+      "contentEncoding": "base64",
+      "contentMediaType": "application/pdf"
+    }
+  }
+}

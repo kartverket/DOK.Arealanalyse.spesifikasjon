@@ -1,7 +1,7 @@
 
-@startuml AnalysisResponse
+@startuml AnalysisOutput
 
-class AnalysisResponse {
+class AnalysisOutput {
     +resultList: Result
     +report: Binary
     +inputGeometry: GM_Surface
