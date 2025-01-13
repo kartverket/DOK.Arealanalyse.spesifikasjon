@@ -58,14 +58,10 @@
             }
           },
           "rasterresult": {
-            "type": "string",
-            "contentEncoding": "base64",
-            "contentMediaType": "image/png"
+            "$ref": "no.geonorge.dokanalyse.v1.rasterresult.schema.json"
           },
           "cartography": {
-            "type": "string",
-            "contentEncoding": "base64",
-            "contentMediaType": "image/png"
+            "type": "string"
           },
           "guidanceText": {
             "type": "string"
@@ -109,9 +105,7 @@
       }
     },
     "report": {
-      "type": "string",
-      "contentEncoding": "base64",
-      "contentMediaType": "application/pdf"
+      "type": "string"
     },
     "inputGeometry": {
       "oneOf": [
@@ -127,7 +121,7 @@
       "type": "integer"
     },
     "factInfoRasterResult": {
-      "type": "string"
+      "$ref": "no.geonorge.dokanalyse.v1.rasterresult.schema.json"
     },
     "factInfoCartography": {
       "type": "string"
